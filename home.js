@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Jika tidak ada yang login (belum login),
             // paksa kembali ke halaman login.html
             if (!currentLoggedInUser) {
-                window.location.href = 'login.html';
+                window.location.href = 'index.html';
             return; // Hentikan eksekusi script ini
          }
             // Karena kita paksa login sbg 'student', kita tidak perlu cek tutor
@@ -992,7 +992,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     // localStorage.clear(); 
                     
                     // Kembali ke halaman login
-                    window.location.href = 'login.html';
+                    window.location.href = 'index.html';
                 }
                 // === SELESAI ===
             });
