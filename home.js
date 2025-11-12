@@ -32,13 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 '1': { id: '1', name: 'Dara Alifa M.', subject: 'Mathematics', education: 'Mathematics, Univ. of Indonesia', img: 'https://placehold.co/80x80/fde047/000000?text=DA', detailImg: 'https://placehold.co/128x128/fde047/000000?text=DA', bio: 'Dara is a passionate mathematician with 5 years of tutoring experience, specializing in helping students conquer algebra and calculus.', emoji: '👩‍🏫', bgColor: 'bg-yellow-200', textColor: 'text-yellow-600', dob: 'June 10, 1992', address: '123 Math Lane, Jakarta' },
                 '2': { id: '2', name: 'M. Harven A. Lim', subject: 'Science', education: 'Science, Bandung Inst. of Tech.', img: 'https://placehold.co/80x80/a78bfa/FFFFFF?text=MH', detailImg: 'https://placehold.co/128x128/a78bfa/FFFFFF?text=MH', bio: 'Harven makes complex scientific concepts easy to understand. He is an expert in physics and chemistry for high school students.', emoji: '👨‍🔬', bgColor: 'bg-purple-200', textColor: 'text-purple-600', dob: 'March 15, 1989', address: '456 Science Rd, Bandung' },
                 '3': { id: '3', name: 'Gita Aulia N.', subject: 'Art & Design', education: 'Fine Arts, Jakarta Inst. of Arts', img: 'https://placehold.co/80x80/facc15/000000?text=GA', detailImg: 'https://placehold.co/128x128/facc15/000000?text=GA', bio: 'Gita believes everyone has a creative side. She specializes in digital illustration and traditional painting techniques.', emoji: '👩‍🎨', bgColor: 'bg-yellow-200', textColor: 'text-yellow-600', dob: 'December 1, 1995', address: '789 Art Blvd, Jakarta' },
-                'budi': { id: 'budi', name: 'Budi Santoso', subject: 'Social Studies', education: 'Sociology, Gadjah Mada Univ.', img: 'https://placehold.co/80x80/4ade80/FFFFFF?text=BS', detailImg: 'https://placehold.co/128x128/4ade80/FFFFFF?text=BS', bio: 'Budi brings social studies to life by connecting historical theories with current events.', dob: 'July 22, 1991', address: '101 Society St, Yogyakarta' },
-                'citra': { id: 'citra', name: 'Citra Lestari', subject: 'History', education: 'History, Padjadjaran Univ.', img: 'https://placehold.co/80x80/fca5a5/000000?text=CL', detailImg: 'https://placehold.co/128x128/fca5a5/000000?text=CL', bio: 'Citra is a storyteller who makes history engaging and memorable for all her students.', dob: 'November 5, 1993', address: '212 History Ave, Bandung' },
-                'ahmad': { id: 'ahmad', name: 'Ahmad Dahlan', subject: 'Indonesian', education: 'Indonesian Lit., Univ. of Indonesia', img: 'https://placehold.co/80x80/93c5fd/000000?text=AD', detailImg: 'https://placehold.co/128x128/93c5fd/000000?text=AD', bio: 'Ahmad helps students appreciate the beauty of the Indonesian language through literature and effective writing.', dob: 'January 30, 1988', address: '333 Language Ln, Depok' },
-                'jane': { id: 'jane', name: 'Jane Doe', subject: 'English', education: 'English Literature, Oxford', img: 'https://placehold.co/80x80/c4b5fd/FFFFFF?text=JD', detailImg: 'https://placehold.co/128x128/c4b5fd/FFFFFF?text=JD', bio: 'A native speaker with a passion for literature, Jane excels at improving conversational and academic English.', dob: 'October 11, 1994', address: '444 Cambridge Rd, London' },
-                '4': { id: '4', name: 'M. Athalladithya', subject: 'Programming', education: 'Programming, Binus University', img: 'https://placehold.co/80x80/d8b4fe/FFFFFF?text=AT', detailImg: 'https://placehold.co/128x128/d8b4fe/FFFFFF?text=AT', bio: 'Athalladithya is a software engineer who enjoys teaching programming fundamentals and logic to beginners.', emoji: '👨‍💻', bgColor: 'bg-purple-200', textColor: 'text-purple-600', dob: 'February 2, 1998', address: '555 Code Cres, Jakarta' },
-                'sari': { id: 'sari', name: 'Sari Dewi', subject: 'Science', education: 'Biology, Airlangga University', img: 'https://placehold.co/80x80/fb923c/FFFFFF?text=SD', detailImg: 'https://placehold.co/128x128/fb923c/FFFFFF?text=SD', bio: 'Sari is an enthusiastic biologist who loves exploring the wonders of the natural world with her students.', dob: 'September 9, 1996', address: '666 Biology Bvld, Surabaya' },
-                'ria': { id: 'ria', name: 'Ria Cantika', subject: 'Art & Design', education: 'Graphic Design, Binus University', img: 'https://placehold.co/80x80/f472b6/FFFFFF?text=RC', detailImg: 'https://placehold.co/128x128/f472b6/FFFFFF?text=RC', bio: 'Ria is a professional graphic designer who teaches the fundamentals of modern design and branding.', dob: 'April 4, 1997', address: '777 Design Dr, Jakarta' }
+                '4': { id: '4', name: 'M. Athalladithya', subject: 'Programming', education: 'Programming, Binus University', img: 'https://placehold.co/80x80/d8b4fe/FFFFFF?text=AT', detailImg: 'https://placehold.co/128x128/d8b4fe/FFFFFF?text=AT', bio: 'Athalladithya is a software engineer who enjoys teaching programming fundamentals and logic to beginners.', emoji: '👨‍💻', bgColor: 'bg-purple-200', textColor: 'text-purple-600', dob: 'February 2, 1998', address: 'Jl. Jeruk II No.23, Depok' }
             };
 
             // Muat data 'studentProfile' dari localStorage, atau gunakan default
@@ -95,7 +89,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const homePage = document.getElementById('homePage');
             const tutorHomePage = document.getElementById('tutorHomePage');
             const myClassesPage = document.getElementById('myClassesPage');
-            const profilePage = document.getElementById('profilePage');
             const studentChatListPage = document.getElementById('studentChatListPage');
             const chatInterfacePage = document.getElementById('chatInterfacePage');
 
@@ -510,81 +503,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
                 container.appendChild(list);
             };
-            
-             const renderProfilePage = (editMode = false) => {
-                let userProfile;
-                if (currentLoggedInUser === 'student') {
-                    userProfile = studentProfile;
-                } else if (tutors[currentLoggedInUser]) {
-                    userProfile = tutors[currentLoggedInUser];
-                } else { return; }
-
-                // Adjust header visibility
-                const profileNav = document.getElementById('profile-nav');
-                const wallet = profileNav.querySelector('.clover-wallet');
-                const myClasses = profileNav.querySelector('.nav-my-classes');
-                if (currentLoggedInUser === 'student') {
-                    wallet.classList.remove('d-none');
-                    myClasses.classList.remove('d-none');
-                } else {
-                    wallet.classList.add('d-none');
-                    myClasses.classList.add('d-none');
-                }
-
-                const headerContent = document.getElementById('profile-header-content');
-                const detailsContent = document.getElementById('profile-details-content');
-                const roleText = currentLoggedInUser === 'student' ? 'Student' : 'Clevr Tutor';
-
-                if (editMode) {
-                    headerContent.innerHTML = `
-                        <div class="flex-grow">
-                           <input id="edit-profile-name" class="text-3xl font-bold w-full border-b-2" value="${userProfile.name}">
-                           <p class="text-lg text-purple-600 font-semibold">${roleText}</p>
-                           <button id="save-profile-btn" class="mt-4 bg-green-500 text-white font-bold py-2 px-6 rounded-full inline-block shadow-md hover:bg-green-600 transition-colors">Save Changes</button>
-                        </div>`;
-                    detailsContent.innerHTML = `
-                         <div class="space-y-4">
-                            <div>
-                                <h3 class="font-semibold text-gray-500 text-sm">Date of Birth</h3>
-                                <input id="edit-profile-dob" class="text-gray-800 w-full border-b" value="${userProfile.dob}">
-                            </div>
-                            <div>
-                                <h3 class="font-semibold text-gray-500 text-sm">Education</h3>
-                                <input id="edit-profile-education" class="text-gray-800 w-full border-b" value="${userProfile.education}">
-                            </div>
-                            <div>
-                                <h3 class="font-semibold text-gray-500 text-sm">Address</h3>
-                                <input id="edit-profile-address" class="text-gray-800 w-full border-b" value="${userProfile.address}">
-                            </div>
-                        </div>`;
-                } else {
-                    headerContent.innerHTML = `
-                        <div class="flex-grow">
-                            <h1 id="profile-page-name" class="text-3xl font-bold">${userProfile.name}</h1>
-                            <p id="profile-page-role" class="text-lg text-purple-600 font-semibold">${roleText}</p>
-                            <div class="mt-4 space-x-2">
-                                <button id="edit-profile-btn" class="bg-purple-600 text-white font-bold py-2 px-6 rounded-full inline-block shadow-md hover:bg-purple-700 transition-colors">Edit Profile</button>
-                                <button id="logout-btn" class="bg-red-500 text-white font-bold py-2 px-6 rounded-full inline-block shadow-md hover:bg-red-600 transition-colors">Log Out</button>
-                            </div>
-                        </div>`;
-                    detailsContent.innerHTML = `
-                        <div class="space-y-4">
-                            <div>
-                                <h3 class="font-semibold text-gray-500 text-sm">Date of Birth</h3>
-                                <p id="profile-page-dob" class="text-gray-800">${userProfile.dob}</p>
-                            </div>
-                            <div>
-                                <h3 class="font-semibold text-gray-500 text-sm">Education</h3>
-                                <p id="profile-page-education" class="text-gray-800">${userProfile.education}</p>
-                            </div>
-                            <div>
-                                <h3 class="font-semibold text-gray-500 text-sm">Address</h3>
-                                <p id="profile-page-address" class="text-gray-800">${userProfile.address}</p>
-                            </div>
-                        </div>`;
-                }
-                document.getElementById('profile-page-image').src = userProfile.detailImg || userProfile.img || 'https://placehold.co/128x128';
-            };
 
 
             // Hide Modals
@@ -632,7 +550,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     e.preventDefault();
                     homePage.classList.add('d-none');
                     tutorHomePage.classList.add('d-none');
-                    profilePage.classList.add('d-none');
                     studentChatListPage.classList.add('d-none');
                     chatInterfacePage.classList.add('d-none');
                     myClassesPage.classList.remove('d-none');
@@ -646,7 +563,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 logo.addEventListener('click', (e) => {
                     e.preventDefault();
                     myClassesPage.classList.add('d-none');
-                    profilePage.classList.add('d-none');
                     studentChatListPage.classList.add('d-none');
                     chatInterfacePage.classList.add('d-none');
 
@@ -657,19 +573,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         homePage.classList.add('d-none');
                         tutorHomePage.classList.remove('d-none');
                     }
-                });
-            });
-
-             document.querySelectorAll('.nav-profile').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    homePage.classList.add('d-none');
-                    myClassesPage.classList.add('d-none');
-                    tutorHomePage.classList.add('d-none');
-                    studentChatListPage.classList.add('d-none');
-                    chatInterfacePage.classList.add('d-none');
-                    profilePage.classList.remove('d-none');
-                    renderProfilePage(false); // Render in view mode
                 });
             });
             
@@ -924,7 +827,6 @@ document.addEventListener('DOMContentLoaded', function() {
             floatingChatBtn.addEventListener('click', () => {
                 homePage.classList.add('d-none');
                 myClassesPage.classList.add('d-none');
-                profilePage.classList.add('d-none');
                 tutorHomePage.classList.add('d-none');
                 studentChatListPage.classList.remove('d-none');
                 renderStudentChatListPage();
@@ -957,44 +859,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     input.value = '';
                     messageContainer.scrollTop = messageContainer.scrollHeight;
                 }
-            });
-            
-             // Profile Page: Edit/Save logic
-            document.getElementById('profilePage').addEventListener('click', (e) => {
-                if (e.target.id === 'edit-profile-btn') {
-                    renderProfilePage(true);
-                } else if (e.target.id === 'save-profile-btn') {
-                    // Get new values
-                    const newName = document.getElementById('edit-profile-name').value;
-                    const newDob = document.getElementById('edit-profile-dob').value;
-                    const newEducation = document.getElementById('edit-profile-education').value;
-                    const newAddress = document.getElementById('edit-profile-address').value;
-
-                    // Update data object
-                    if (currentLoggedInUser === 'student') {
-                        studentProfile.name = newName;
-                        studentProfile.dob = newDob;
-                        studentProfile.education = newEducation;
-                        studentProfile.address = newAddress;
-                    } else if (tutors[currentLoggedInUser]) {
-                        tutors[currentLoggedInUser].name = newName;
-                        tutors[currentLoggedInUser].dob = newDob;
-                        tutors[currentLoggedInUser].education = newEducation;
-                        tutors[currentLoggedInUser].address = newAddress;
-                    }
-                    saveData(); // <-- TAMBAHKAN DI SINI
-                    renderProfilePage(false); // Switch back to view mode
-                }
-                else if (e.target.id === 'logout-btn') {
-                    // Hapus data login dari localStorage
-                    localStorage.removeItem('clevrLoggedInUserId');
-                    // (Opsional: hapus semua data)
-                    // localStorage.clear(); 
-                    
-                    // Kembali ke halaman login
-                    window.location.href = 'index.html';
-                }
-                // === SELESAI ===
             });
 
 
