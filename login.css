@@ -121,7 +121,7 @@
             color: #e0e0e0;
             opacity: 1;
         }
-
+        
         /* Tombol Continue */
         .btn-continue {
             background-color: #2ecc71; 
@@ -144,6 +144,20 @@
             cursor: not-allowed;
         }
 
+        /* Style untuk peringatan login */
+        .login-warning {
+            color: #FFB8B8; /* Warna merah muda agar kontras */
+            font-weight: 500;
+            font-size: 0.9rem;
+            margin-bottom: 1rem; /* Jarak sebelum tombol */
+            display: none; /* Sembunyi secara default */
+            text-align: left; /* Biar rapi */
+        }
+
+        /* Class untuk menampilkan warning */
+        .login-warning.show {
+            display: block;    
+        }       
         /* Link Sign Up */
         .signup-link,
         .signup-link:visited { /* <-- DITAMBAHKAN :visited di sini */
