@@ -33,6 +33,12 @@
             font-size: 3rem; 
         }
 
+        .login-card .logo-img {
+            max-width: 150px; /* Diperkecil dari 180px */
+            height: auto;
+            margin-bottom: 2rem; /* Spasi sedikit lebih banyak agar tombol toggle tidak terlalu dekat */
+        }
+
         .login-card h2 {
             font-weight: 500;
             font-size: 1.75rem; 
