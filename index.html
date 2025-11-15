@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLEVR - Landing Page</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        /* Menerapkan font kustom */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Font Fredoka One untuk Judul dan elemen penting */
+        .font-fredoka {
+            font-family: 'Fredoka One', sans-serif;
+        }
+
+        /* Memaksa font diterapkan di atas Bootstrap */
+        h1, h2, h3, .navbar-brand, .btn {
+            font-family: 'Fredoka One', sans-serif !important;
+        }
+
+        p {
+            font-family: 'Fredoka', sans-serif !important;
+            font-weight: 100;
+        }
+
+        .logo {
+            font-size: 2.5rem !important; /* Ukuran asli Bootstrap ~1.25rem */
+            font-weight: 450;
+            color: #011A5A;
+        }
+
+        /* Warna kustom */
+        .bg-custom-orange {
+            background-color: #F9A825; /* Oranye seperti di screenshot */
+        }
+        
+        .bg-custom-purple {
+            background-color: #7E57C2; /* Ungu seperti di screenshot */
+            border-radius: 20px;
+        }
+
+        .btn-custom-yellow {
+            background-color: #FDA700;
+            color: #ffffff;
+            font-weight: 100;
+            border: none;
+        }
+        .btn-custom-yellow:hover {
+            background-color: #E49600;
+            color: #fff1ff;
+        }
+
+        /* Penyesuaian untuk tombol Sign Up di navbar (grup) */
+        .navbar .btn-custom-yellow {
+             border-radius: 0 0.25rem 0.25rem 0;
+        }
+        /* Penyesuaian untuk tombol Login di navbar (grup) */
+        .navbar .btn-light {
+             border-radius: 0.25rem 0 0 0.25rem;
+             border-color: #FBC02D; /* Samakan border */
+        }
+        
+        /* Tombol CTA Kuning Besar */
+         .btn-cta-yellow {
+            background-color: #FBC02D;
+            color: #333;
+            font-weight: bold;
+            border: none;
+            border-radius: 15px;
+            padding: 10px 25px;
+        }
+        .btn-cta-yellow:hover {
+            background-color: #F9A825;
+            color: #000;
+        }
+
+        /* Ukuran Ikon di Card */
+        .card-icon {
+            font-size: 2.5rem;
+            color: #4CAF50; /* Hijau seperti ikon buku */
+        }
+        
+        /* Dekorasi lingkaran (blobs) */
+        .cta-section {
+            position: relative;
+            overflow: hidden; /* Sembunyikan overflow dari blobs */
+            /* padding: 80px 0; */ /* <-- PERUBAHAN: Dihapus agar bisa center vertikal */
+
+            /* -- PERUBAHAN: Ditambahkan untuk full height -- */
+            min-height: 100vh; 
+            display: flex;
+            align-items: center;
+            /* ------------------------------------------ */
+        }
+        .cta-section::before,
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            z-index: 0;
+            opacity: 0.5;
+        }
+        /* Blob Pink */
+        .cta-section::before {
+            background-color: #F48FB1; /* Pink */
+            width: 300px;
+            height: 300px;
+            top: -50px;
+            right: -100px;
+        }
+        /* Blob Pink lainnya */
+        .cta-section::after {
+            background-color: #F48FB1; /* Pink */
+            width: 250px;
+            height: 250px;
+            bottom: -80px;
+            left: -120px;
+        }
+        .cta-container {
+            position: relative; /* Pastikan konten CTA di atas blobs */
+            z-index: 1;
+        }
+
+        /* -- CSS TAMBAHAN UNTUK FOOTER BARU -- */
+        .footer-links {
+            list-style: none;
+            padding-left: 0;
+        }
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+        .footer-links a {
+            text-decoration: none;
+            color: #6c757d; /* Warna abu-abu (muted) Bootstrap */
+        }
+        .footer-links a:hover {
+            color: #000;
+            text-decoration: underline;
+        }
+        .footer-bottom {
+            font-size: 0.875rem; /* Sedikit lebih kecil */
+        }
+        /* ---------------------------------- */
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand logo" href=" ">CLEVR</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav ms-auto align-items-center">
+                    <div class="btn-group shadow-sm">
+                        <a href="login.html" class="btn btn-light border px-4 py-2">
+                            Login
+                        </a>
+                        <a href="signup.html" class="btn btn-custom-yellow px-4 py-2">
+                            Sign Up
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav> <section class="bg-white" style="padding: 5rem 0;">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-md-6 text-center text-md-start">
+                    <h1 class="display-3" style="color: #011A5A;">Learning is Fun,</h1>
+                    <h1 class="display-3" style="color: #011A5A;">Grades are Super!</h1>
+                    <p class="lead text-muted my-4">
+                        Interactive online tutoring exclusively for elementary school children. Achieve success with our best Tutors!
+                    </p>
+                    <a href="login.html" class="btn btn-custom-yellow shadow-sm btn-lg">
+                        START LEARNING NOW!
+                    </a>
+                </div>
+                
+                <div class="col-md-6 text-center">
+                    <img src="foto/logotanpa.png" 
+                         alt="Ilustrasi Pensil Clevr" 
+                         class="img-fluid" 
+                         style="max-height: 450px; transform: rotate(10deg);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-custom-orange text-white min-vh-100 d-flex flex-column justify-content-center">
+        <div class="container">
+            <h2 class="text-center display-4 mb-4">Why Choose Clever?</h2>
+            
+            <div class="row g-5 mt-3"> <div class="col-md-4">
+                    <div class="card h-100 text-center shadow-lg border-0 rounded-4">
+                        <div class="card-body p-5">
+                            <i class="bi bi-book-fill card-icon mb-3"></i>
+                            <h3 class="card-title" style="color: #011A5A">Blablabla</h3>
+                            <p class="card-text text-muted">
+                                Blablabla Blablabla <br>
+                                BlablablaBlablabla <br>
+                                BlablablaBlablabla
+                            </ap>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 text-center shadow-lg border-0 rounded-4">
+                        <div class="card-body p-5">
+                            <i class="bi bi-book-fill card-icon mb-3"></i>
+                            <h3 class="card-title text-dark">Blablabla</h3>
+                            <p class="card-text text-muted">
+                                Blablabla Blablabla <br>
+                                BlablablaBlablabla <br>
+                                BlablablaBlablabla
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 text-center shadow-lg border-0 rounded-4">
+                        <div class="card-body p-5">
+                            <i class="bi bi-book-fill card-icon mb-3"></i>
+                            <h3 class="card-title text-dark">Blablabla</h3>
+                            <p class="card-text text-muted">
+                                Blablabla Blablabla <br>
+                                BlablablaBlablabla <br>
+                                BlablablaBlablabla
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section bg-white">
+        <div class="container cta-container">
+            <div class="row">
+                <div class="col-lg-10 col-xl-8 mx-auto">
+                    <div class="bg-custom-purple text-white p-5 text-center shadow-lg">
+                        <h2 class="display-5 mb-3">Ready to start your journey?</h2>
+                        <p class="lead mb-4">
+                            Join CLEVR today and explore a world of knowledge with a
+                            community of passionate learners and experienced tutors.
+                        </p>
+                        <a href="signup.html" class="btn btn-custom-yellow shadow-sm btn-lg">
+                            Sign Up Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-5 bg-white border-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-3 mb-4">
+                    <h5 class="font-fredoka mb-3">Resources</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Find a Tutor</a></li>
+                        <li><a href="#">Become a Tutor</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Feedback</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-12 col-md-3 mb-4">
+                    <h5 class="font-fredoka mb-3">Help</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Get Help</a></li>
+                        <li><a href="#">Payment Options</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-3 mb-4">
+                    <h5 class="font-fredoka mb-3">Company</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">About CLEVR</a></li>
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-3 mb-4">
+                    <h5 class="font-fredoka mb-3">Follow Us</h5>
+                    <ul class="footer-links d-flex gap-3" style="font-size: 1.5rem;">
+                        <li><a href="#"><i class="bi bi-twitter-x"></i></a></li>
+                        <li><a href="#"><i class="bi bi-instagram"></i></a></li>
+                        <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+                        <li><a href="#"><i class="bi bi-youtube"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="my-4">
+
+            <div class="d-flex flex-column flex-sm-row justify-content-between text-muted footer-bottom">
+                <p>&copy; 2025 CLEVR. All Rights Reserved.</p>
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item"><a href="#" class="text-muted text-decoration-none">Terms of Sale</a></li>
+                    <li class="list-inline-item ms-3"><a href="#" class="text-muted text-decoration-none">Privacy Policy</a></li>
+                    <li class="list-inline-item ms-3"><a href="#" class="text-muted text-decoration-none">Privacy Settings</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
