@@ -13,12 +13,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
     <style>
         /* CSS Kustom (Hanya yang relevan) */
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f7fafc; /* bg-gray-100 */
+        }
+        
+        .logo {
+            font-family: 'Fredoka One', sans-serif !important;
+            font-size: 2.5rem !important; /* Ukuran asli Bootstrap ~1.25rem */
+            font-weight: 450;
+            color: #011A5A;
         }
         
         .d-none {
@@ -49,9 +57,7 @@
         <header class="bg-white shadow-sm sticky top-0 z-50">
             <div class="container mx-auto px-4 py-4 flex items-center justify-between">
                 <!-- Tautan diubah untuk menunjuk ke file lain -->
-                <a href="#" class="nav-logo">
-                    <img src="foto/logo.jpeg" alt="CLEVR Logo" class="h-16 md:h-18" id="nav-logo-profile"> 
-                  </a>
+                <a class="logo" href=" ">CLEVR</a>
                  <div class="relative flex-grow mx-8 hidden md:block">
                      <input type="text" placeholder="Search is disabled on this page" class="w-full pl-10 pr-4 py-2 rounded-full border border-gray-300 bg-gray-100 cursor-not-allowed" autocomplete="off" disabled>
                 </div>
@@ -155,7 +161,7 @@
             // Jika tidak ada yang login (belum login),
             // paksa kembali ke halaman login.
             if (!currentLoggedInUser) {
-                window.location.href = 'index.html'; // Asumsi login page adalah index.html
+                window.location.href = 'login.html'; // Asumsi login page adalah index.html
                 return; // Hentikan eksekusi script ini
             }
             // === SELESAI PERBAIKAN 1 ===
@@ -172,7 +178,7 @@
                         window.location.href = 'home_tutor.html'; // Arahkan ke home tutor
                     } else {
                         // Fallback jika terjadi error
-                        window.location.href = 'index.html';
+                        window.location.href = 'login.html';
                     }
                 });
             }
@@ -304,7 +310,7 @@
                 } else { 
                     // Jika data user tidak ditemukan (error), paksa logout
                     localStorage.removeItem('clevrLoggedInUserId');
-                    window.location.href = 'index.html';
+                    window.location.href = 'login.html';
                     return; 
                 }
 
@@ -537,7 +543,7 @@
                     // localStorage.clear(); 
                     
                     // Kembali ke halaman login
-                    window.location.href = 'index.html'; // Pastikan ini nama file login Anda
+                    window.location.href = 'login.html'; // Pastikan ini nama file login Anda
                 }
                 // === SELESAI PERBAIKAN 7 ===
             });
@@ -547,4 +553,3 @@
     </script>
 </body>
 </html>
-
