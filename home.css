@@ -4,6 +4,12 @@ body {
     background-color: #f7fafc; /* bg-gray-100 */
 }
 
+.logo {
+            font-family: 'Fredoka One', sans-serif !important;
+            font-size: 2.5rem !important; /* Ukuran asli Bootstrap ~1.25rem */
+            font-weight: 450;
+            color: #011A5A;
+        }
 /* Halaman Login/Sign Up (Menggunakan font Poppins agar sesuai dengan desain lama) */
 /* CSS untuk loginPage dihapus karena halamannya sudah tidak ada */
 
