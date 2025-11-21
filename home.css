@@ -1,0 +1,42 @@
+/* CSS Kustom */
+body {
+    font-family: 'Fredoka', sans-serif; /* Menggunakan font Fredoka sesuai request sebelumnya */
+    background-color: #f7fafc; /* bg-gray-100 */
+}
+
+.logo {
+    font-family: 'Fredoka One', sans-serif !important;
+    font-size: 2.5rem !important; 
+    font-weight: 450;
+    color: #011A5A;
+}
+
+.d-none {
+    display: none !important;
+}
+
+/* Animasi untuk Notifikasi Modal */
+.notification-modal-content {
+    transition: all 0.3s ease-in-out;
+}
+.notification-modal-content.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+.notification-modal-content.hide {
+    transform: translateY(-50px);
+    opacity: 0;
+}
+
+/* === PENYELAMAT (Anti Gambar Raksasa) === */
+/* Membatasi ukuran SVG jika Tailwind gagal loading */
+svg {
+    width: 1.5rem;  /* Sekitar 24px */
+    height: 1.5rem; /* Sekitar 24px */
+}
+
+/* Khusus icon notifikasi biar agak besar sedikit jika Tailwind mati */
+#notification-icon svg {
+    width: 4rem;
+    height: 4rem;
+}
