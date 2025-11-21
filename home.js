@@ -27,11 +27,55 @@ document.addEventListener('DOMContentLoaded', function() {
     // currentLoggedInUser sudah di atas
 
     // Muat data 'tutors' dari localStorage, atau gunakan default
+   // Muat data 'tutors' dari localStorage, atau gunakan default
     let tutors = JSON.parse(localStorage.getItem('clevrTutors')) || {
-        '1': { id: '1', name: 'Dara Alifa M.', subject: 'Mathematics', education: 'Mathematics, Univ. of Indonesia', img: 'https://placehold.co/80x80/fde047/000000?text=DA', detailImg: 'https://placehold.co/128x128/fde047/000000?text=DA', bio: 'Dara is a passionate mathematician with 5 years of tutoring experience, specializing in helping students conquer algebra and calculus.', emoji: '👩‍🏫', bgColor: 'bg-yellow-200', textColor: 'text-yellow-600', dob: 'June 10, 1992', address: '123 Math Lane, Jakarta' },
-        '2': { id: '2', name: 'M. Harven A. Lim', subject: 'Science', education: 'Science, Bandung Inst. of Tech.', img: 'https://placehold.co/80x80/a78bfa/FFFFFF?text=MH', detailImg: 'https://placehold.co/128x128/a78bfa/FFFFFF?text=MH', bio: 'Harven makes complex scientific concepts easy to understand. He is an expert in physics and chemistry for high school students.', emoji: '👨‍🔬', bgColor: 'bg-purple-200', textColor: 'text-purple-600', dob: 'March 15, 1989', address: '456 Science Rd, Bandung' },
-        '3': { id: '3', name: 'Gita Aulia N.', subject: 'Art & Design', education: 'Fine Arts, Jakarta Inst. of Arts', img: 'https://placehold.co/80x80/facc15/000000?text=GA', detailImg: 'https://placehold.co/128x128/facc15/000000?text=GA', bio: 'Gita believes everyone has a creative side. She specializes in digital illustration and traditional painting techniques.', emoji: '👩‍🎨', bgColor: 'bg-yellow-200', textColor: 'text-yellow-600', dob: 'December 1, 1995', address: '789 Art Blvd, Jakarta' },
-        '4': { id: '4', name: 'M. Athalladithya', subject: 'Programming', education: 'Programming, Binus University', img: 'https://placehold.co/80x80/d8b4fe/FFFFFF?text=AT', detailImg: 'https://placehold.co/128x128/d8b4fe/FFFFFF?text=AT', bio: 'Athalladithya is a software engineer who enjoys teaching programming fundamentals and logic to beginners.', emoji: '👨‍💻', bgColor: 'bg-purple-200', textColor: 'text-purple-600', dob: 'February 2, 1998', address: 'Jl. Jeruk II No.23, Depok' }
+        '1': { 
+            id: '1', 
+            name: 'Dara Alifa M.', 
+            subject: 'Mathematics', 
+            education: 'Mathematics, Univ. of Indonesia', 
+            // Foto profil kecil (untuk kartu)
+            img: 'foto/tutor1.jpg', 
+            // Foto profil besar (untuk detail)
+            detailImg: 'foto/tutor1.jpg', 
+            bio: 'Dara is a passionate mathematician with 5 years of tutoring experience.', 
+            // HAPUS property 'emoji' agar sistem memaksa menggunakan foto (img)
+            dob: 'June 10, 1992', 
+            address: '123 Math Lane, Jakarta' 
+        },
+        '2': { 
+            id: '2', 
+            name: 'M. Harven A. Lim', 
+            subject: 'Science', 
+            education: 'Science, Bandung Inst. of Tech.', 
+            img: 'foto/tutor2.jpg', 
+            detailImg: 'foto/tutor2.jpg', 
+            bio: 'Harven makes complex scientific concepts easy to understand.', 
+            dob: 'March 15, 1989', 
+            address: '456 Science Rd, Bandung' 
+        },
+        '3': { 
+            id: '3', 
+            name: 'Gita Aulia N.', 
+            subject: 'Art & Design', 
+            education: 'Fine Arts, Jakarta Inst. of Arts', 
+            img: 'foto/tutor3.jpg', 
+            detailImg: 'foto/tutor3.jpg', 
+            bio: 'Gita specializes in digital illustration and painting.', 
+            dob: 'December 1, 1995', 
+            address: '789 Art Blvd, Jakarta' 
+        },
+        '4': { 
+            id: '4', 
+            name: 'M. Athalladithya', 
+            subject: 'Programming', 
+            education: 'Programming, Binus University', 
+            img: 'foto/tutor4.jpg', 
+            detailImg: 'foto/tutor4.jpg', 
+            bio: 'Athalladithya enjoys teaching logic to beginners.', 
+            dob: 'February 2, 1998', 
+            address: 'Jl. Jeruk II No.23, Depok' 
+        }
     };
 
     // Muat data 'studentProfile' dari localStorage, atau gunakan default
