@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLEVR Help Center</title>
+    
+    <!-- Google Fonts: Fredoka (Sama seperti pricing.html) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Bootstrap 5 CSS (Menggunakan CDN agar file ini bisa langsung dijalankan) -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        /* --- 1. Base Styles & Variables (Diambil dari pricing.html) --- */
+        :root {
+            --clevr-purple: #827BFF;
+            --clevr-dark: #011A5A;
+            --clevr-orange: #FDA700;
+        }
+
+        body {
+            font-family: 'Fredoka', sans-serif;
+            color: #333;
+            background-color: #fff;
+        }
+
+        /* --- 2. Custom Colors Utilities --- */
+        .bg-clevr-purple { background-color: var(--clevr-purple) !important; }
+        .text-clevr-purple { color: var(--clevr-purple) !important; }
+        .text-clevr-dark { color: var(--clevr-dark) !important; }
+        
+        /* --- 3. Navbar Styling (Konsisten dengan pricing.html) --- */
+        .navbar-custom {
+            height: 80px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .nav-link {
+            color: white !important;
+            font-weight: 600;
+            font-size: 1.125rem;
+            transition: color 0.2s;
+        }
+        .nav-link:hover {
+            color: #e5e7eb !important;
+        }
+        .nav-separator {
+            opacity: 0.6;
+            margin: 0 12px;
+            color: white;
+        }
+
+        /* --- 4. Help Center Specific Styles --- */
+        
+        /* Search Bar Area */
+        .search-container {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .search-input {
+            border-radius: 50px; /* Membuat bentuk pill */
+            border: 2px solid #eee;
+            padding: 1rem 1rem 1rem 3.5rem; /* Padding kiri besar untuk icon */
+            font-weight: 500;
+            color: #666;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            border-color: var(--clevr-purple);
+            box-shadow: 0 4px 20px rgba(130, 123, 255, 0.2);
+            outline: none;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #9ca3af;
+            font-size: 1.2rem;
+        }
+
+        /* FAQ Card Styling */
+        .faq-card {
+            border: 1px solid #f3f4f6;
+            border-radius: 12px;
+            background: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+        }
+
+        .faq-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border-color: var(--clevr-purple);
+        }
+
+        .faq-question {
+            color: var(--clevr-purple);
+            font-weight: 600;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-answer {
+            color: #4b5563; /* Gray-600 */
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        .hero-title {
+            color: var(--clevr-dark);
+            font-weight: 700;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        /* Info Card (Adapted from card-custom logic) */
+        .info-card {
+            background: white;
+            border-radius: 1rem; /* Matches pricing card radius */
+            border: 1px solid #f3f4f6;
+            padding: 2.5rem;
+            height: 100%;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-title-custom {
+            color: var(--clevr-purple);
+            font-weight: 600;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-text-custom {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #4a4a4a;
+            font-weight: 400; /* Fredoka normal weight */
+        }
+
+        /* Section Headers */
+        .section-title {
+            color: var(--clevr-dark);
+            font-weight: 800;
+        }
+
+        .spacer {
+            height: 50px;
+        }
+
+        /* --- 5. NEW: Feedback Form Styles --- */
+        .feedback-card {
+            background: white;
+            border-radius: 1rem;
+            border: 1px solid #f3f4f6;
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-label {
+            color: var(--clevr-dark);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-control-custom, .form-select-custom {
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            color: #4b5563;
+            width: 100%;
+            background-color: #fff;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .form-control-custom:focus, .form-select-custom:focus {
+            border-color: var(--clevr-purple);
+            box-shadow: 0 0 0 4px rgba(130, 123, 255, 0.15);
+            outline: none;
+        }
+
+        .btn-submit {
+            background-color: var(--clevr-purple);
+            color: white;
+            font-weight: 700;
+            border-radius: 8px;
+            padding: 12px;
+            transition: all 0.3s ease;
+            border: none;
+            width: 100%;
+        }
+
+        .btn-submit:hover {
+            background-color: #6f68fc;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(130, 123, 255, 0.4);
+        }
+
+        /* --- 6. Scroll Margin Utilities (NEW!) --- */
+        /* Ini yang membuat scroll berhenti tepat di atas konten */
+        #contact, #feedback {
+            scroll-margin-top: 100px; /* 80px Navbar + 20px Space */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar (Sama seperti pricing.html) -->
+    <nav class="navbar navbar-custom bg-clevr-purple px-4 px-md-5 sticky-top">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <!-- Logo -->
+            <div class="text-white fs-3 fw-bold tracking-wide">
+                CLEVR
+            </div>
+            
+            <!-- Links -->
+            <div class="d-flex align-items-center">
+                <a href="index.html" class="nav-link text-decoration-none">Home</a>
+                <span class="nav-separator">|</span>
+                <a href="signup.html" class="nav-link text-decoration-none">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-5">
+        
+        <!-- Hero Section & Search -->
+        <div class="text-center mx-auto mb-5 mt-4" style="max-width: 800px;">
+            <h1 class="display-4 fw-bold text-clevr-dark mb-3">
+                CLEVR Help Center
+            </h1>
+            <p class="text-secondary fs-5 fw-medium mb-5">
+                Find answers to your common questions or contact our support team.
+            </p>
+            
+            <!-- Search Bar Component -->
+            <div class="search-container">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" class="form-control search-input" placeholder="Search here" aria-label="Search">
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="mt-5 pt-3 mx-auto" style="max-width: 900px;">
+            <h3 class="section-title mb-4 fs-2">Frequently Asked Questions (FAQ)</h3>
+            
+            <!-- FAQ List -->
+            <div class="d-flex flex-column gap-4">
+                
+                <!-- FAQ Item 1 (Sesuai Screenshot) -->
+                <div class="card faq-card p-4">
+                    <div class="card-body p-1">
+                        <h4 class="faq-question">How do I book a tutoring session?</h4>
+                        <p class="faq-answer mb-0">
+                            You can book a session via the "Find a Tutor" page in the main navigation. Select the subject, time, and suitable tutor, then confirm your payment using CLOVER tokens or other options.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 (Duplikat sesuai screenshot untuk visual) -->
+                <div class="card faq-card p-4">
+                    <div class="card-body p-1">
+                        <h4 class="faq-question">How do I purchase CLOVER tokens?</h4>
+                        <p class="faq-answer mb-0">
+                            Navigate to the Pricing page, select the bundle that suits your needs (Single Session or Value Pack), and proceed to checkout using your preferred payment method like GoPay, OVO, or Bank Transfer.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 (Tambahan untuk melengkapi tampilan) -->
+                <div class="card faq-card p-4">
+                    <div class="card-body p-1">
+                        <h4 class="faq-question">Can I reschedule a session?</h4>
+                        <p class="faq-answer mb-0">
+                            Yes, you can reschedule up to 24 hours before the session starts without any penalty. Go to "My Sessions" in your dashboard to manage your bookings.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+        <hr class="my-5 mx-auto" style="max-width: 1150px; border-top: 2px solid #cbd5e1; opacity: 1;">
+        
+        <!-- Contact Section -->
+        <div id="contact" class="text-center mx-auto mb-5" style="max-width: 768px;">
+            <h2 class="hero-title">Let's Get In Touch!</h2>
+            <p class="hero-subtitle">
+                Do you have questions, need support, or want to explore collaboration? Contact us via the form below or using our details.
+            </p>
+        </div>
+
+        <!-- Contact Card Area -->
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-10">
+                <div class="info-card p-4 p-md-5">
+                    <h3 class="card-title-custom mb-3" style="font-size: 1.5rem;">Contact Information</h3>
+                    
+                    <!-- Thin divider inside card -->
+                    <hr class="text-secondary opacity-25 mb-4">
+
+                    <div class="row">
+                        <div class="col-12 mb-4">
+                            <h5 class="fw-bold text-dark mb-1">Phone</h5>
+                            <p class="text-secondary mb-0 fs-5">+62 812-3456-789</p>
+                        </div>
+                        
+                        <div class="col-12">
+                            <h5 class="fw-bold text-dark mb-1">Phone</h5>
+                            <p class="text-secondary mb-0 fs-5">+62 812-3456-789</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Divider -->
+        <hr class="my-5 mx-auto" style="max-width: 1150px; border-top: 2px solid #cbd5e1; opacity: 1;">
+
+        <!-- NEW: FEEDBACK SECTION (Sesuai Screenshot) -->
+        <div id="feedback" class="row justify-content-center">
+            <div class="text-center mx-auto mb-5" style="max-width: 768px;">
+                <h2 class="hero-title" style="font-size: 2.5rem;">We Value Your Opinion</h2>
+                <p class="hero-subtitle">
+                    Help us get better! Please provide any feedback, suggestions, or bug reports you may have encountered.
+                </p>
+            </div>
+
+            <div class="feedback-card p-4 p-md-5 mx-auto" style="max-width: 600px;">
+                <form>
+                    <!-- Nama -->
+                    <div class="mb-3">
+                        <label for="inputNama" class="form-label">Nama</label>
+                        <input type="text" class="form-control-custom" id="inputNama" placeholder="">
+                    </div>
+
+                    <!-- Email -->
+                    <div class="mb-3">
+                        <label for="inputEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control-custom" id="inputEmail" placeholder="">
+                    </div>
+
+                    <!-- Feedback Type -->
+                    <div class="mb-3">
+                        <label for="feedbackType" class="form-label">Feedback Type</label>
+                        <select class="form-select-custom" id="feedbackType">
+                            <option selected>Suggestion/Feature Idea</option>
+                            <option value="1">Bug Report</option>
+                            <option value="2">General Feedback</option>
+                            <option value="3">Other</option>
+                        </select>
+                    </div>
+
+                    <!-- Feedback Message -->
+                    <div class="mb-4">
+                        <label for="feedbackMessage" class="form-label">Your Feedback Message</label>
+                        <textarea class="form-control-custom" id="feedbackMessage" rows="4"></textarea>
+                    </div>
+
+                    <!-- Checkbox -->
+                    <div class="mb-4 form-check">
+                        <input type="checkbox" class="form-check-input" id="contactCheck">
+                        <label class="form-check-label text-secondary small fw-medium" for="contactCheck">
+                            Allow us to contact you regarding this feedback.
+                        </label>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn-submit">
+                        Submit Feedback
+                    </button>
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

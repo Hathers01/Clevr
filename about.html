@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - CLEVR</title>
+    
+    <!-- Google Fonts: Fredoka -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        /* --- 1. Base Styles & Variables (From pricing.html) --- */
+        :root {
+            --clevr-purple: #827BFF;
+            --clevr-dark: #011A5A;
+            --clevr-orange: #FDA700;
+        }
+
+        body {
+            font-family: 'Fredoka', sans-serif;
+            color: #333;
+            background-color: #fff; /* Mengikuti background pricing.html */
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* --- 2. Custom Colors Utilities --- */
+        .bg-clevr-purple { background-color: var(--clevr-purple) !important; }
+        .bg-clevr-dark { background-color: var(--clevr-dark) !important; }
+        .bg-clevr-orange { background-color: var(--clevr-orange) !important; }
+        
+        .text-clevr-purple { color: var(--clevr-purple) !important; }
+        .text-clevr-dark { color: var(--clevr-dark) !important; }
+        .text-clevr-orange { color: var(--clevr-orange) !important; }
+
+        /* --- 3. Component Styling --- */
+        
+        /* Navbar Styling (Exact match to pricing.html) */
+        .navbar-custom {
+            height: 80px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .nav-link {
+            color: white !important;
+            font-weight: 600;
+            font-size: 1.125rem;
+            transition: color 0.2s;
+        }
+        .nav-link:hover {
+            color: #e5e7eb !important; /* light gray */
+        }
+        .nav-separator {
+            opacity: 0.6;
+            margin: 0 12px;
+            color: white;
+        }
+
+        /* --- 4. About Us Specific Styling (Adapted to match theme) --- */
+        
+        /* Hero Section */
+        .hero-title {
+            color: var(--clevr-dark);
+            font-weight: 700;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        /* Info Card (Adapted from card-custom logic) */
+        .info-card {
+            background: white;
+            border-radius: 1rem; /* Matches pricing card radius */
+            border: 1px solid #f3f4f6;
+            padding: 2.5rem;
+            height: 100%;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-title-custom {
+            color: var(--clevr-purple);
+            font-weight: 600;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-text-custom {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #4a4a4a;
+            font-weight: 400; /* Fredoka normal weight */
+        }
+
+        .spacer {
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar (Exact match to pricing.html) -->
+    <nav class="navbar navbar-custom bg-clevr-purple px-4 px-md-5">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <!-- Logo -->
+            <div class="text-white fs-3 fw-bold tracking-wide">
+                CLEVR
+            </div>
+            
+            <!-- Links -->
+            <div class="d-flex align-items-center">
+                <a href="index.html" class="nav-link text-decoration-none">Home</a>
+                <span class="nav-separator">|</span>
+                <a href="signup.html" class="nav-link text-decoration-none">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-5">
+        
+        <!-- Header Section -->
+        <div class="text-center mb-5">
+            <h1 class="hero-title">Discover CLEVR</h1>
+            <p class="hero-subtitle">
+                We support various payment methods for your convenience when purchasing CLEVR Tokens or other services.
+            </p>
+        </div>
+
+        <!-- Cards Section -->
+        <div class="row g-4">
+            
+            <!-- Our Story (Full Width) -->
+            <div class="col-12">
+                <div class="info-card">
+                    <h3 class="card-title-custom">Our Story</h3>
+                    <p class="card-text-custom">
+                        CLEVR was founded in 2025 with a simple vision: to make high-quality education accessible to everyone, wherever they are. We believe that every student has unique potential, and our task is to provide the right tools and guidance to unlock it.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Our Mission (Half Width) -->
+            <div class="col-md-6">
+                <div class="info-card">
+                    <h3 class="card-title-custom">Our Mission</h3>
+                    <p class="card-text-custom">
+                        To provide an innovative, personalized, and affordable learning platform to empower the next generation to succeed academically and personally.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Our Vision (Half Width) -->
+            <div class="col-md-6">
+                <div class="info-card">
+                    <h3 class="card-title-custom">Our Vision</h3>
+                    <p class="card-text-custom">
+                        To become the global leader in virtual tutoring that drives adaptive intelligence and critical thinking.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="spacer"></div>
+    </main>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

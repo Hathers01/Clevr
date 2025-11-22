@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLEVR Pricing Plans</title>
+    
+    <!-- Google Fonts: Fredoka -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        /* --- 1. Base Styles & Variables --- */
+        :root {
+            --clevr-purple: #827BFF;
+            --clevr-dark: #011A5A;
+            --clevr-orange: #FDA700;
+        }
+
+        body {
+            font-family: 'Fredoka', sans-serif;
+            color: #333;
+            background-color: #fff;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* --- 2. Custom Colors Utilities (Mimicking Tailwind classes) --- */
+        .bg-clevr-purple { background-color: var(--clevr-purple) !important; }
+        .bg-clevr-dark { background-color: var(--clevr-dark) !important; }
+        .bg-clevr-orange { background-color: var(--clevr-orange) !important; }
+        
+        .text-clevr-purple { color: var(--clevr-purple) !important; }
+        .text-clevr-dark { color: var(--clevr-dark) !important; }
+        .text-clevr-orange { color: var(--clevr-orange) !important; }
+        
+        .border-clevr-orange { border-color: var(--clevr-orange) !important; }
+
+        /* --- 3. Component Styling --- */
+        
+        /* Navbar Styling */
+        .navbar-custom {
+            height: 80px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .nav-link {
+            color: white !important;
+            font-weight: 600;
+            font-size: 1.125rem;
+            transition: color 0.2s;
+        }
+        .nav-link:hover {
+            color: #e5e7eb !important; /* light gray */
+        }
+        .nav-separator {
+            opacity: 0.6;
+            margin: 0 12px;
+            color: white;
+        }
+
+        /* Card Styling */
+        .card-custom {
+            border-radius: 1rem;
+            border: 1px solid #f3f4f6;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+        .card-custom:hover {
+            transform: translateY(-5px);
+        }
+
+        /* "Most Popular" Card Special Styling */
+        .card-popular {
+            border: 4px solid var(--clevr-orange);
+            box-shadow: 0 20px 25px -5px rgba(130, 123, 255, 0.4);
+            z-index: 10;
+        }
+        /* Desktop only overlap effect */
+        @media (min-width: 768px) {
+            .card-popular {
+                margin-top: -1rem;
+                margin-bottom: 1rem;
+                transform: scale(1.02); /* Slight scale to match previous look */
+            }
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -18px;
+            right: 24px;
+            background-color: var(--clevr-orange);
+            color: var(--clevr-dark);
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 8px 16px;
+            border-radius: 0.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Check Icons */
+        .check-icon {
+            color: #00C853;
+            font-size: 1.25rem;
+            margin-right: 0.75rem;
+        }
+        .check-icon-white-bg {
+            background-color: white;
+            color: #00C853; /* Green text inside white box */
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            margin-right: 0.75rem;
+        }
+
+        /* Button Animation (The "Pilih Salah Satu" request) */
+        .btn-animate {
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .btn-animate:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+        }
+        .btn-animate:active {
+            transform: scale(0.95);
+        }
+
+        /* Payment Pills */
+        .payment-pill {
+            padding: 0.5rem 2rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            cursor: default;
+            transition: background-color 0.2s;
+            display: inline-block;
+            border-width: 1px;
+            border-style: solid;
+        }
+        .pill-pink {
+            background-color: #fce7f3; color: #ec4899; border-color: #fbcfe8;
+        }
+        .pill-pink:hover { background-color: #fbcfe8; }
+        
+        .pill-purple {
+            background-color: #f3e8ff; color: #a855f7; border-color: #e9d5ff;
+        }
+        .pill-purple:hover { background-color: #e9d5ff; }
+        
+        .pill-yellow {
+            background-color: #fef9c3; color: #ca8a04; border-color: #fef08a;
+        }
+        .pill-yellow:hover { background-color: #fef08a; }
+
+        /* Payment Card */
+        .card-payment {
+            border-radius: 1.5rem;
+            border: 1px solid #f3f4f6;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-custom bg-clevr-purple px-4 px-md-5">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <!-- Logo -->
+            <div class="text-white fs-3 fw-bold tracking-wide">
+                CLEVR
+            </div>
+            
+            <!-- Links -->
+            <div class="d-flex align-items-center">
+                <a href="index.html" class="nav-link text-decoration-none">Home</a>
+                <span class="nav-separator">|</span>
+                <a href="signup.html" class="nav-link text-decoration-none">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-5">
+        
+        <!-- Header Section -->
+        <div class="text-center mx-auto mb-5" style="max-width: 768px;">
+            <h1 class="display-4 fw-bold text-clevr-dark mb-3">
+                Our Flexible Pricing Plans
+            </h1>
+            <p class="text-secondary fs-5 fw-medium mb-4 lh-base">
+                Purchase CLOVER Token bundles to access personalized tutoring sessions and exclusive resources.
+            </p>
+            <p class="text-clevr-purple fw-bold fs-5">
+                1 Tutoring Session (60 mins) = 100 CLOVER Tokens
+            </p>
+        </div>
+
+        <!-- Pricing Cards Grid -->
+        <div class="row g-4 align-items-start justify-content-center mx-auto" style="max-width: 1150px;">
+            
+            <!-- Card 1: Standard -->
+            <div class="col-md-4">
+                <div class="card card-custom p-4 border-0">
+                    <div class="card-body d-flex flex-column">
+                        <h3 class="fw-bold text-clevr-dark mb-2">Value Pack</h3>
+                        <p class="text-secondary small fw-medium mb-4">Get more sessions with a discounted rate.</p>
+                        
+                        <div class="d-flex align-items-baseline mb-4">
+                            <span class="display-4 fw-bold text-clevr-orange">550</span>
+                            <span class="fs-5 fw-bold text-clevr-dark ms-2">CLOVER</span>
+                        </div>
+
+                        <ul class="list-unstyled mb-5 flex-grow-1">
+                            <li class="d-flex align-items-center mb-3">
+                                <i class="fa-solid fa-square-check check-icon"></i>
+                                <span class="text-clevr-dark fw-medium small">Equivalent to 5.5 Sessions</span>
+                            </li>
+                            <li class="d-flex align-items-center mb-3">
+                                <i class="fa-solid fa-square-check check-icon"></i>
+                                <span class="text-clevr-dark fw-medium small">Access to All Subjects</span>
+                            </li>
+                            <li class="d-flex align-items-center mb-3">
+                                <i class="fa-solid fa-square-check check-icon"></i>
+                                <span class="text-clevr-dark fw-medium small">90-Day Expiry</span>
+                            </li>
+                        </ul>
+
+                        <button onclick="window.location.href='login.html'" class="btn bg-clevr-dark text-white fw-bold w-100 py-3 rounded-3 btn-animate border-0">
+                            Buy Value Pack (Rp 500k)
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Most Popular (Center) -->
+            <div class="col-md-4">
+                <div class="card card-custom card-popular bg-clevr-purple p-4 position-relative">
+                    <!-- Badge -->
+                    <div class="popular-badge">
+                        Most Popular
+                    </div>
+
+                    <div class="card-body d-flex flex-column text-white">
+                        <h3 class="fw-bold mb-2">Value Pack</h3>
+                        <p class="text-white-50 small fw-medium mb-4">Get more sessions with a discounted rate.</p>
+                        
+                        <div class="d-flex align-items-baseline mb-4">
+                            <span class="display-4 fw-bold text-white">550</span>
+                            <span class="fs-5 fw-bold text-white ms-2">CLOVER</span>
+                        </div>
+
+                        <ul class="list-unstyled mb-5 flex-grow-1">
+                            <li class="d-flex align-items-center mb-3">
+                                <div class="check-icon-white-bg">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <span class="fw-medium small">Equivalent to 5.5 Sessions</span>
+                            </li>
+                            <li class="d-flex align-items-center mb-3">
+                                <div class="check-icon-white-bg">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <span class="fw-medium small">Access to All Subjects</span>
+                            </li>
+                            <li class="d-flex align-items-center mb-3">
+                                <div class="check-icon-white-bg">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <span class="fw-medium small">90-Day Expiry</span>
+                            </li>
+                        </ul>
+
+                        <button onclick="window.location.href='login.html'" class="btn bg-clevr-orange text-clevr-dark fw-bold w-100 py-3 rounded-3 btn-animate border-0">
+                            Buy Value Pack (Rp 500k)
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Standard -->
+            <div class="col-md-4">
+                <div class="card card-custom p-4 border-0">
+                    <div class="card-body d-flex flex-column">
+                        <h3 class="fw-bold text-clevr-dark mb-2">Value Pack</h3>
+                        <p class="text-secondary small fw-medium mb-4">Get more sessions with a discounted rate.</p>
+                        
+                        <div class="d-flex align-items-baseline mb-4">
+                            <span class="display-4 fw-bold text-clevr-orange">550</span>
+                            <span class="fs-5 fw-bold text-clevr-dark ms-2">CLOVER</span>
+                        </div>
+
+                        <ul class="list-unstyled mb-5 flex-grow-1">
+                            <li class="d-flex align-items-center mb-3">
+                                <i class="fa-solid fa-square-check check-icon"></i>
+                                <span class="text-clevr-dark fw-medium small">Equivalent to 5.5 Sessions</span>
+                            </li>
+                            <li class="d-flex align-items-center mb-3">
+                                <i class="fa-solid fa-square-check check-icon"></i>
+                                <span class="text-clevr-dark fw-medium small">Access to All Subjects</span>
+                            </li>
+                            <li class="d-flex align-items-center mb-3">
+                                <i class="fa-solid fa-square-check check-icon"></i>
+                                <span class="text-clevr-dark fw-medium small">90-Day Expiry</span>
+                            </li>
+                        </ul>
+
+                        <button onclick="window.location.href='login.html'" class="btn bg-clevr-dark text-white fw-bold w-100 py-3 rounded-3 btn-animate border-0">
+                            Buy Value Pack (Rp 500k)
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- SEPARATOR LINE -->
+        <hr class="my-5 mx-auto" style="max-width: 1150px; border-top: 2px solid #cbd5e1; opacity: 1;">
+
+        <!-- Payment Section -->
+        <div id="payment" class="mx-auto" style="max-width: 896px; scroll-margin-top: 40px;">
+            <!-- Header -->
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-clevr-dark mb-3">
+                    Flexible Payment Options
+                </h2>
+                <p class="text-secondary fs-5 fw-medium mx-auto lh-base" style="max-width: 672px;">
+                    We support various payment methods for your convenience when purchasing CLOVER Tokens or other services.
+                </p>
+            </div>
+
+            <!-- Payment Content Card -->
+            <div class="card card-payment p-4 p-md-5 bg-white">
+                <div class="card-body p-0">
+                    
+                    <!-- Section 1: Digital Wallets -->
+                    <div class="mb-5">
+                        <h3 class="fw-bold text-clevr-purple mb-3">Digital Wallets & QRIS</h3>
+                        <p class="text-secondary fw-medium mb-4">We accept instant payments via the following digital wallet platforms:</p>
+                        
+                        <div class="d-flex flex-wrap gap-3">
+                            <!-- Pink Pill -->
+                            <div class="payment-pill pill-pink">
+                                Gopay
+                            </div>
+                            <!-- Purple Pill -->
+                            <div class="payment-pill pill-purple">
+                                OVO
+                            </div>
+                            <!-- Yellow Pill -->
+                            <div class="payment-pill pill-yellow">
+                                Dana
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Divider -->
+                    <hr class="text-secondary opacity-25 mb-5">
+
+                    <!-- Section 2: Virtual Accounts -->
+                    <div>
+                        <h3 class="fw-bold text-clevr-purple mb-3">Virtual Accounts & Bank Transfer</h3>
+                        <p class="text-secondary fw-medium lh-base">
+                            Payments can be made using Virtual Accounts or direct transfer to our bank accounts (BCA, Mandiri, etc.). Details will be provided at checkout.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
