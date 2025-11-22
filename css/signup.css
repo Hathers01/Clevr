@@ -1,0 +1,232 @@
+/* CSS Kustom */
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Fredoka', sans-serif;
+            
+            /* --- SLIDING BACKGROUND --- */
+            background-image: linear-gradient(to right, #FDA700 50%, #827BFF 50%);
+            background-size: 200% 100%;
+            background-position: 100% 50%;
+            transition: background-position 0.6s ease-in-out;
+        }
+
+        body.tutor-mode {
+            background-position: 0% 50%;
+        }
+
+        .login-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 1.5rem; 
+        }
+
+        /* --- KARTU LOGIN --- */
+        .login-card {
+            max-width: 380px; 
+            width: 100%;
+            background: #ffffff;
+            border-radius: 1.5rem; 
+            border: 1px solid rgba(0, 0, 0, 0.1); 
+            padding: 2rem; 
+            color: #011A5A; 
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2); 
+        }
+
+        /* --- HEADER BARU (LEBIH RAPAT) --- */
+        .header-row {
+            display: flex;
+            /* DIUBAH: Hapus space-between agar tidak mental ke ujung */
+            /* justify-content: space-between; */
+            
+            /* BARU: Gunakan center agar seluruh blok ada di tengah */
+            justify-content: center; 
+            
+            align-items: center; 
+            margin-bottom: 1.5rem;
+            
+            /* BARU: Atur jarak spesifik di sini */
+            gap: 1.5rem; 
+        }
+
+        /* Wrapper untuk Teks Kiri */
+        .brand-text {
+            display: flex;
+            flex-direction: column; 
+            align-items: flex-start; 
+            text-align: left;
+        }
+
+        .brand-text h1 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 2.8rem; 
+            margin: 0;
+            line-height: 1;
+            color: #011A5A;
+            margin-left: -2px; 
+        }
+
+        .brand-text p {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin: 0.3rem 0 0 0; 
+            line-height: 1.2;
+            color: #011A5A;
+        }
+
+        /* Bagian Gambar Kanan */
+        .header-logo-img {
+            max-width: 85px; 
+            height: auto;
+            transform: rotate(15deg); 
+            /* Koreksi margin agar tidak terlalu naik karena rotasi */
+            margin-top: -5px; 
+        }
+
+        .sub-header {
+            text-align: center;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #011A5A;
+        }
+
+        .form-label {
+            text-align: left;
+            width: 100%;
+            font-weight: 600; 
+            margin-bottom: 0.25rem;
+            font-size: 1rem;
+            color: #011A5A;
+        }
+
+        /* Tombol Toggle */
+        .btn-group {
+            background-color: rgba(0, 0, 0, 0.2); 
+            border-radius: 50rem; 
+            padding: 0; 
+            overflow: hidden;
+            padding-top: 3px;
+        }
+        
+        .btn-group .btn {
+            border: none;
+            padding: 0.4rem 1rem; 
+            font-weight: 500;
+            background-color: transparent; 
+            color: #f0f0f0;
+            border-radius: 0 !important; 
+            transform: translateY(0);
+            transition: all 0.4s ease;
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        .btn-group .btn.active {
+            background-color: #ffffff;
+            color: #827BFF; 
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transform: translateY(-3px);
+            font-weight: 600;
+        }
+
+        body.tutor-mode .btn-group .btn.active {
+            color: #FDA700; 
+        }
+
+        #btn-student {
+            border-top-left-radius: 50rem !important;
+            border-bottom-left-radius: 50rem !important;
+        }
+
+        #btn-tutor {
+            border-top-right-radius: 50rem !important;
+            border-bottom-right-radius: 50rem !important;
+        }
+        
+        .btn-group .btn:not(.active):hover {
+            transform: scale(1.03); 
+            background-color: rgba(255, 255, 255, 0.1); 
+        }
+        
+        .btn-group .btn.active:hover {
+            transform: translateY(-3px) scale(1.02); 
+        }
+
+        /* Input Form */
+        .form-control {
+            background-color: #F5F6FA; 
+            border: 1px solid #E0E0E0;
+            border-radius: 0.6rem; 
+            padding: 0.6rem 1rem; 
+            color: #011A5A; 
+            font-weight: 500;
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        .form-control:focus {
+            background-color: #FFFFFF;
+            border-color: #827BFF; 
+            color: #011A5A;
+            box-shadow: 0 0 0 0.2rem rgba(130, 123, 255, 0.15); 
+        }
+        
+        body.tutor-mode .form-control:focus {
+            border-color: #FDA700;
+            box-shadow: 0 0 0 0.2rem rgba(253, 167, 0, 0.15);
+        }
+
+        .form-control::placeholder {
+            color: #A0A0A0;
+            opacity: 1;
+        }
+
+        /* Tombol Log In */
+        .btn-continue {
+            background-color: #827BFF; 
+            border: none;
+            border-radius: 0.6rem; 
+            padding: 0.6rem; 
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: white;
+            transition: background-color 0.3s ease;
+            font-family: 'Fredoka', sans-serif; 
+        }
+
+        body.tutor-mode .btn-continue {
+            background-color: #FDA700;
+        }
+
+        .btn-continue:hover {
+            opacity: 0.9; 
+        }
+
+        .btn-continue:disabled {
+            background-color: #95a5a6 !important; 
+            cursor: not-allowed;
+        }
+
+        /* Link Sign Up */
+        .signup-link,
+        .signup-link:visited { 
+            font-size: 0.95rem;
+            color: #011A5A; 
+            text-decoration: none;
+            transition: color 0.3s ease; 
+        }
+        
+        .signup-link strong {
+            color: #827BFF; 
+            font-weight: 700;
+            text-decoration: underline;
+        }
+
+        body.tutor-mode .signup-link strong {
+            color: #FDA700;
+        }
+        
+        .signup-link:hover strong {
+            opacity: 0.8;
+        }
