@@ -7,55 +7,65 @@
     
     <!-- Bootstrap CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="login.css" rel="stylesheet">
+    <link href="css/login.css" rel="stylesheet">
     
     <!-- Google Fonts (Inter) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Fredoka+One&display=swap" rel="stylesheet">
 
 </head>
 <body class="login-container">
 
-    <div class="login-card text-center">
-        <!-- Logo -->
-        <img src="foto/logo.png" alt="Clevr Logo" class="logo-img"> 
+    <div class="login-card">
+        
+        <!-- --- HEADER BARU --- -->
+        <div class="header-row">
+            <!-- Bagian Kiri: Teks (Dibuat Flex Column agar Rata Kiri) -->
+            <div class="brand-text">
+                <h1>CLEVR</h1>
+                <p>Your knowledge<br>journey starts here.</p>
+            </div>
+            
+            <!-- Bagian Kanan: Gambar Logo -->
+            <img src="foto/Icon.png" alt="Clevr Logo" class="header-logo-img">
+        </div>
+        
+        <!-- Teks instruksi kecil di tengah -->
+        <div class="sub-header">
+            Please log in to your account
+        </div>
+        <!-- ------------------- -->
 
-        <!-- Toggle Student/Tutor -->
         <div class="btn-group w-100 mb-4" role="group">
             <button type="button" class="btn w-50 active" id="btn-student">Student</button>
             <button type="button" class="btn w-50" id="btn-tutor">Tutor</button>
         </div>
 
-        <!-- Judul Form -->
-        <h2 class="mb-4">Log In</h2>
-
-        <!-- Form Login -->
         <form id="loginForm" action="#" method="POST">
             <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
                 <input type="text" class="form-control" id="username" placeholder="Username" required>
             </div>
             <div class="mb-4">
+                <label for="password" class="form-label">Password</label>
                 <input type="password" class="form-control" id="password" placeholder="Password" required>
             </div>
             
-            <div id="loginWarning" class="login-warning">
-                </div>
             <button type="submit" class="btn btn-continue w-100 mb-3" id="continueButton" disabled>
-                Continue
+                Log In
             </button>
         </form>
 
-        <!-- Link Sign Up -->
-        <!-- DIUBAH: href="#" diganti menjadi "signup.html" -->
-        <!-- (Ganti "signup.html" jika nama file Anda berbeda) -->
-        <a href="signup.html" class="signup-link">
-            Don't have an account? <strong>Sign Up</strong>
-        </a>
+        <div class="text-center">
+            <a href="signup.html" class="signup-link">
+                Don't have an account? <strong>Sign Up</strong>
+            </a>
+        </div>
     </div>
 
     <!-- Bootstrap JS Bundle -->
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="login.js"></script>
+    <script src="js/login.js"></script>
 </body>
 </html>
